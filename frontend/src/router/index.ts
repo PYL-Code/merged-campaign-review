@@ -10,9 +10,9 @@ import ErrorView from "@/views/error/Error.vue";
 import MypageLayout from "@/views/mypage/MypageLayout.vue";
 import MypageView from "@/views/mypage/Mypage.vue";
 import MyReviewList from "@/views/mypage/MyReviewList.vue";
-import CampaignDetail from '../views/campaign/CampaignDetail.vue'
-import ApplicationForm from '../views/campaign/ApplicationForm.vue'
-import MyApplication from '../views/campaign/MyApplication.vue'
+import CampaignDetail from '../views/campaign/CampaignDetail.vue';
+import ApplicationForm from '../views/campaign/ApplicationForm.vue';
+import MyApplication from '../views/campaign/MyApplication.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

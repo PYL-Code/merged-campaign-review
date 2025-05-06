@@ -39,9 +39,13 @@
         <div class="campaign-actions">
           <p v-if="isWaiting" class="state-notice">📌 현재 모집 대기중입니다.</p>
           <p v-if="isReviewing || isCompleted" class="state-notice">📌 모집 종료된 캠페인입니다.</p>
-          <router-link :to="`/campaign/apply/${route.params.id}`">
-            <button class="apply-button" :disabled="!isOngoing">신청하기</button>
-          </router-link>
+          <button
+              class="apply-button"
+              :disabled="!isOngoing"
+              @click="handleApplyClick"
+          >
+            신청하기
+          </button>
         </div>
       </div>
     </div>
@@ -68,10 +72,12 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import axios from 'axios'
+import { getUserNo } from '@/utils/jwt'
 
 const route = useRoute()
+const router = useRouter()
 const campaign = ref({ category: {} })
 
 const reviewStartDate = ref(null)
@@ -98,7 +104,20 @@ const formatDate = (dateStr) => {
   const d = new Date(dateStr)
   return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
 }
+
+// ✅ 신청 버튼 클릭 핸들러 추가
+const handleApplyClick = () => {
+  const userNo = getUserNo()
+  if (!userNo) {
+    alert('로그인 후 사용할 수 있습니다.')
+    router.push('/login')
+    return
+  }
+  // 로그인 되어 있으면 신청 페이지로 이동
+  router.push(`/campaign/apply/${route.params.id}`)
+}
 </script>
+
 
 <style scoped>
 .campaign-detail-container {

@@ -62,6 +62,7 @@
 import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 import { getUserFromToken } from '@/utils/jwt'
+import { getUserNo } from '@/utils/jwt'
 
 // const userNo = 1 // 🔹 임시: 실제 로그인된 유저 ID로 대체 필요
 const applications = ref([]) // 모든 신청 목록
@@ -72,8 +73,16 @@ const statusText = {
   REJECTED: '미선정'
 }
 
-const userInfo = getUserFromToken()
-if (!userInfo || !userInfo.userNo) {
+//jwt 토큰으로 불러오는 방식
+// const userInfo = getUserFromToken()
+// if (!userInfo || !userInfo.userNo) {
+//   alert('로그인이 필요합니다.')
+//   // router.push('/login')
+// }
+
+//localstorage로 불러오는 방식
+const userInfo = getUserNo()
+if(!userInfo) {
   alert('로그인이 필요합니다.')
   router.push('/login')
 }
