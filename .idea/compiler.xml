@@ -23,6 +23,9 @@
       <module name="com.example.sb3_msa3.board-service.main" options="-parameters" />
       <module name="com.example.sb3_msa3.board-service.test" options="-parameters" />
       <module name="sb3_msa3.board-service" options="-parameters" />
+      <module name="sb3_msa3.campaign_pyl" options="-parameters" />
+      <module name="sb3_msa3.campaign_pyl.main" options="-parameters" />
+      <module name="sb3_msa3.campaign_pyl.test" options="-parameters" />
       <module name="sb3_msa3.eureka-server" options="-parameters" />
       <module name="sb3_msa3.eureka-server.main" options="-parameters" />
       <module name="sb3_msa3.eureka-server.test" options="-parameters" />

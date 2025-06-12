@@ -17,15 +17,56 @@
 ## 기능 소개
 - 메인 화면 + 리뷰 리스트 + 리뷰 작성
 
-## 합치면서 수정한 내용
-- vite.config.ts 파일을 수정하였습니다.   
-  ```typescript
-  '/api/mypage': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-        secure: false,
-      },
-  ```
-- main.ts 파일을 수정했습니다.   
-  기본 포트번호 설정 부분을 삭제하였습니다.   
-  해당 부분에 주석 처리로 표시해 두었습니다.
+
+## 📢 체험단 프로젝트 기능 설명
+Vue 3 + Vite 기반으로 제작된 캠페인 신청 플랫폼 프로젝트입니다.   
+campaign_pyl 모듈에서는 캠페인 상세 조회, 신청 등의 기능을 제공합니다.
+
+### 📌 주요 기능
+- 🔐 JWT 인증 로그인
+- 📋 캠페인 목록/상세 조회
+- 📝 캠페인 신청 및 신청자 정보 관리
+- 📅 모집 기간, 리뷰 기간 처리
+- 🚫 모집 상태(대기, 진행중, 종료)에 따른 상태 제어
+- ⚠️ 비로그인 상태에서 신청 시 경고 및 로그인 페이지로 리다이렉트
+
+### 🛠️ 기술 스택
+|항목|기술|
+|---|---|
+|프레임워크|Vue 3 (<script setup>)|
+|빌드 툴|Vite|
+|라우팅|Vue Router|
+|상태관리|(선택적) Vue's reactive APIs|
+|인증 방식|JWT (로컬스토리지 기반)|
+|통신 라이브러리|Axios|
+|스타일링|Scoped CSS|
+
+### 🗂️ 프로젝트 구조
+```
+frontend/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── views/            # 각 페이지 컴포넌트
+│   ├── router/           # vue-router 설정
+│   ├── utils/            # JWT 관련 유틸 함수
+│   └── App.vue
+├── vite.config.js
+└── package.json
+```
+
+
+### ⚙️ 설치 및 실행
+```bash
+# 1. 프로젝트 클론
+git clone https://github.com/your-username/campaign-pyl.git
+cd frontend
+
+# 2. 패키지 설치
+npm install
+
+# 3. 개발 서버 실행
+npm run dev
+```
+💡 백엔드 API가 localhost:9876에서 동작하고 있어야 정상 작동합니다.   
