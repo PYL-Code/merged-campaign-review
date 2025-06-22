@@ -57,6 +57,22 @@ frontend/
 ```
 
 
+### 📋 페이지 경로
+링크를 통해 접속하지 않으면 상품 관리/주문 관리 페이지로 접근할 수 없습니다.   
+
+#### 1. 브라우저에서 접속
+기본 URL: http://localhost:5173   
+또는 터미널에 표시된 URL로 접속
+#### 2. 주요 화면
+- 메인 페이지: http://localhost:5173/
+- 로그인: http://localhost:5173/login
+- 회원가입: http://localhost:5173/register
+- 상품 관리: http://localhost:5173/products
+- 주문 관리: http://localhost:5173/orders
+- 게시판: http://localhost:5173/board
+- 관리자 페이지: http://localhost:5173/admin
+
+
 ### ⚙️ 설치 및 실행
 ```bash
 # 1. 프로젝트 클론
